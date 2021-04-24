@@ -10,9 +10,12 @@
 <body>
     <main>
         {% include navigation.html %}
+        
         <section class="content container">
             {{ content }}
         </section>
+
+        {% include footer.html %}
     </main>
     <script src="{{ "assets/js/main.js" | relative_url }}"></script>
 </body>
