@@ -1,3 +1,6 @@
 .footer {
     background: $secondary-background-color;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    padding: 1rem;
 }

@@ -6,6 +6,8 @@
     position: fixed;
     top: 0;
     box-shadow: 0 4px 4px $shadow-color;
+    grid-row-start: 1;
+    grid-row-end: 2;
 
     &__items {
         list-style: none;
