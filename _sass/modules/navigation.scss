@@ -54,3 +54,28 @@
         }
     }
 }
+
+.logo {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.5rem;
+
+    &__dave {
+        font-weight: 400;
+
+        &::before {
+            content: '<';
+            font-weight: 400;
+            color: $selected-blue-color
+        }
+    }
+
+    &__dev {
+        font-weight: 300;
+
+        &::after {
+            content: '/>';
+            font-weight: 400;
+            color: $selected-blue-color;
+        }
+    }
+}
