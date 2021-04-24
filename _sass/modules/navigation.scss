@@ -5,6 +5,7 @@
     z-index: 1;
     position: fixed;
     top: 0;
+    box-shadow: 0 4px 4px $shadow-color;
 
     &__items {
         list-style: none;
@@ -30,6 +31,19 @@
             width: auto;
             order: 1;
             padding-right: .5rem;
+
+            @media screen and (max-width: $mobile),
+            screen and (max-width: $tablet) {
+                width: 100%;
+                order: 2;
+                text-align: center;
+                padding: 1rem .5rem;
+                display: none;
+            }
+
+            &-active {
+                display: block;
+            }
         }
 
         &--logo {
@@ -51,6 +65,39 @@
         &--link:hover {
             border-radius: 5px;
             background: $main-background-color;
+        }
+    }
+
+    &__toggle {
+        cursor: pointer;
+        display: none;
+
+        @media screen and (max-width: $mobile),
+        screen and (max-width: $tablet) {
+            order: 1;
+            display: block;
+
+            &--bars {
+                width: 20px;
+                height: 16px;
+                border: 0;
+                border-top: 2px solid $main-text-color;
+                background: transparent;
+                position: relative;
+
+                &::before, &::after {
+                    content: '';
+                    width: 100%;
+                    border-top: 2px solid $main-text-color;
+                    top: 6px;
+                    left: 0;
+                    position: absolute;
+                } 
+
+                &::after {
+                    top: 14px;
+                }
+            }
         }
     }
 }
