@@ -1,0 +1,56 @@
+.navigation { 
+    background: $secondary-background-color;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+
+    &__items {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        @media screen and (max-width: $mobile),
+        screen and (max-width: $tablet) {
+            justify-content: space-between;
+        }
+    }
+
+    &__item {
+        white-space: nowrap;
+        
+        &--link {
+            display: block;
+            width: auto;
+            order: 1;
+            padding-right: .5rem;
+        }
+
+        &--logo {
+            order: 0;
+            flex: 1;
+        }
+    }
+
+    &__text {
+        color: $main-text-color;
+        text-decoration: none;
+        display: block;
+        width: auto;
+
+        &--link {
+            padding: 8px 12px;
+        }
+
+        &--link:hover {
+            border-radius: 8px;
+            background: $main-background-color;
+        }
+    }
+}
