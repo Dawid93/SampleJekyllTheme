@@ -33,10 +33,10 @@ $icon_factor: calc(#{$social_icon_size / #{$social_icon_size_original}});
         width: $social_icon_size;
         height: $social_icon_size;
         
-        content: url(../../assets/img/social_bg.png);
+        content: url(../../assets/img/socials/social_bg.png);
 
         &:hover {
-            content: url(../../assets/img/social_bg_selected.png);
+            content: url(../../assets/img/socials/social_bg_selected.png);
         }
     }
 
@@ -57,23 +57,23 @@ $icon_factor: calc(#{$social_icon_size / #{$social_icon_size_original}});
         }
         
         &--linkedin {
-            @include socialIconVariant($social_icon_size, $social_icon_size, 28px, 28px, "../../assets/img/linkedin.png");
+            @include socialIconVariant($social_icon_size, $social_icon_size, 28px, 28px, "../../assets/img/socials/linkedin.png");
         }
 
         &--youtube {
-            @include socialIconVariant($social_icon_size, $social_icon_size, 33px, 23px, "../../assets/img/youtube.png");
+            @include socialIconVariant($social_icon_size, $social_icon_size, 33px, 23px, "../../assets/img/socials/youtube.png");
         }
 
         &--github {
-            @include socialIconVariant($social_icon_size, $social_icon_size, 30px, 30px, "../../assets/img/github.png");
+            @include socialIconVariant($social_icon_size, $social_icon_size, 30px, 30px, "../../assets/img/socials/github.png");
         }
 
         &--twitter {
-            @include socialIconVariant($social_icon_size, $social_icon_size, 30px, 25px, "../../assets/img/twitter.png");
+            @include socialIconVariant($social_icon_size, $social_icon_size, 30px, 25px, "../../assets/img/socials/twitter.png");
         }
 
         &--facebook {
-            @include socialIconVariant($social_icon_size, $social_icon_size, 28px, 28px, "../../assets/img/facebook.png");
+            @include socialIconVariant($social_icon_size, $social_icon_size, 28px, 28px, "../../assets/img/socials/facebook.png");
         }
     }
 }
