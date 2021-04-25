@@ -1,6 +1,76 @@
 .footer {
-    background: $secondary-background-color;
     grid-row-start: 3;
     grid-row-end: 4;
-    padding: 1rem;
+
+    &__creator {
+        text-align: center;
+        font-size: 0.7rem;
+        font-family: 'Roboto-Mono', monospace;
+    }
+
+    &__secondary {
+        padding: .25rem;
+        background: $tertiary-background-color;
+    }
+
+    &__main {
+        padding: 1rem;
+        background: $secondary-background-color;
+    }
+}
+
+.social {
+    width: 90px;
+    height: 90px;
+    position: relative;
+    
+    &__background {
+        position: relative;
+        content: url(../../assets/img/social_bg.png);
+
+        &:hover {
+            content: url(../../assets/img/social_bg_selected.png);
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        pointer-events: none;
+        
+        &--linkedin {
+            top: calc(90px / 2 - 28px / 2);
+            left: calc(90px / 2 - 28px / 2);
+            content: url(../../assets/img/linkedin.png);
+        }
+
+        &--youtube {
+            top: calc(90px / 2 - 23px / 2);
+            left: calc(90px / 2 - 33px / 2);
+            content: url(../../assets/img/youtube.png);
+        }
+
+        &--github {
+            top: calc(90px / 2 - 30px / 2);
+            left: calc(90px / 2 - 30px / 2);
+            content: url(../../assets/img/github.png);
+        }
+
+        &--twitter {
+            top: calc(90px / 2 - 25px / 2);
+            left: calc(90px / 2 - 30px / 2);
+            content: url(../../assets/img/twitter.png);
+        }
+
+        &--facebook {
+            top: calc(90px / 2 - 28px / 2);
+            left: calc(90px / 2 - 28px / 2);
+            content: url(../../assets/img/facebook.png);
+        }
+    }
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    list-style: none;
 }

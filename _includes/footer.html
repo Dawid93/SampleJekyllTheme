@@ -1,5 +1,14 @@
 <footer class="footer">
-    <section class="container">
-        <p>Temp footer content</p>
+    <section class="footer__main">
+        <ul class="socials container">
+            <li><a>{% include social_icon.html social='linkedin' %}</a><li>
+            <li><a>{% include social_icon.html social='github' %}</a></li>
+            <li><a>{% include social_icon.html social='youtube' %}</a></li>
+            <li><a>{% include social_icon.html social='twitter' %}</a></li>
+            <li><a>{% include social_icon.html social='facebook' %}</a></li>
+        </ul>
+    </section>
+    <section class="footer__secondary">
+        <p class="footer__creator container">Created by Dave.</p>
     </section>
 </footer>
