@@ -1,3 +1,7 @@
+$social_icon_size: 60px;
+$social_icon_size_original: 90px;
+$icon_factor: calc(#{$social_icon_size / #{$social_icon_size_original}});
+
 .footer {
     grid-row-start: 3;
     grid-row-end: 4;
@@ -20,12 +24,14 @@
 }
 
 .social {
-    width: 90px;
-    height: 90px;
+    width: $social_icon_size;
+    height: $social_icon_size;
     position: relative;
     
     &__background {
-        position: relative;
+        width: $social_icon_size;
+        height: $social_icon_size;
+        
         content: url(../../assets/img/social_bg.png);
 
         &:hover {
@@ -36,35 +42,37 @@
     &__icon {
         position: absolute;
         pointer-events: none;
+
+        @mixin socialIconVariant($widthBg, $heightBg, $iconWidth, $iconHeight, $imgSrc) {
+            $imageWidth: calc(#{$iconWidth} * #{$icon_factor});
+            $imageHeight: calc(#{$iconHeight} * #{$icon_factor});
+
+            width: $imageWidth;
+            height: $imageHeight;
+
+            top: calc(#{$heightBg} / 2 - #{$imageWidth} / 2);
+            left: calc(#{$widthBg} / 2 - #{$imageWidth} / 2);
+            content: url($imgSrc);
+        }
         
         &--linkedin {
-            top: calc(90px / 2 - 28px / 2);
-            left: calc(90px / 2 - 28px / 2);
-            content: url(../../assets/img/linkedin.png);
+            @include socialIconVariant($social_icon_size, $social_icon_size, 28px, 28px, "../../assets/img/linkedin.png");
         }
 
         &--youtube {
-            top: calc(90px / 2 - 23px / 2);
-            left: calc(90px / 2 - 33px / 2);
-            content: url(../../assets/img/youtube.png);
+            @include socialIconVariant($social_icon_size, $social_icon_size, 33px, 23px, "../../assets/img/youtube.png");
         }
 
         &--github {
-            top: calc(90px / 2 - 30px / 2);
-            left: calc(90px / 2 - 30px / 2);
-            content: url(../../assets/img/github.png);
+            @include socialIconVariant($social_icon_size, $social_icon_size, 30px, 30px, "../../assets/img/github.png");
         }
 
         &--twitter {
-            top: calc(90px / 2 - 25px / 2);
-            left: calc(90px / 2 - 30px / 2);
-            content: url(../../assets/img/twitter.png);
+            @include socialIconVariant($social_icon_size, $social_icon_size, 30px, 25px, "../../assets/img/twitter.png");
         }
 
         &--facebook {
-            top: calc(90px / 2 - 28px / 2);
-            left: calc(90px / 2 - 28px / 2);
-            content: url(../../assets/img/facebook.png);
+            @include socialIconVariant($social_icon_size, $social_icon_size, 28px, 28px, "../../assets/img/facebook.png");
         }
     }
 }
