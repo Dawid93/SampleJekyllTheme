@@ -82,4 +82,5 @@ $icon_factor: calc(#{$social_icon_size / #{$social_icon_size_original}});
     display: flex;
     justify-content: center;
     list-style: none;
+    padding-inline-start: 0;
 }
