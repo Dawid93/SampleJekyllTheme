@@ -7,7 +7,7 @@
         <div class="banner__overlay banner--radius">
             <div class="banner__content banner__content--{{ include.type }}">
                 <h1 class="banner__title banner__title--{{ include.type }}">{{ include.title }}</h1>
-                <p class="banner__brief"> {{ brief | truncate: maxLength , "..." }}</p>
+                <p class="banner__brief"> {{ brief | truncate: maxLength , "..." | strip_html }}</p>
                 <p>
                     <span class="banner__author">Author: </span>
                     <span class="banner__author banner__author--name">{{ include.author }}</span>
