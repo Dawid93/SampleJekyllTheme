@@ -1,16 +1,19 @@
 .banner {
     box-shadow: 0 8px 4px $shadow-color;
     font-family: "Inter";
-    text-shadow: 1px 2px 2px $shadow-color;
+    text-shadow: 0px 0px 4px $shadow-color;
 
     &__content {
-        padding: 0 2rem;
-        width: 80%;
         height: 100%;
         max-height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
+
+        &--main {
+            width: 80%;
+            padding: 0 2rem;
+        }
 
         &--secondary {
             width: 100%;
@@ -28,22 +31,22 @@
     }
 
     &__title {
-        font-size: 2rem;
         font-weight: normal;
+
+        &--main {
+            font-size: 2rem;
+        }
 
         &--secondary {
             font-size: 1.5rem;
         }
     }
 
-    &__short {
+    &__brief {
         font-size: 1rem;
         font-weight: 300;
         margin: 0 0 .5rem 0;
-
-        &--secondary {
-            font-size: 1rem;
-        }
+        line-height: 1.2rem;
     }
 
     &__link {

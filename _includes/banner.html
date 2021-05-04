@@ -1,0 +1,18 @@
+{% assign maxLength = include.maxLength %}
+{% assign brief = include.brief %}
+
+<div class="banner banner--radius banner__{{ include.type }}">
+    <img class="banner--radius banner__image" src="{{ include.image }}" />
+    <a class="banner__link" href="#">
+        <div class="banner__overlay banner--radius">
+            <div class="banner__content banner__content--{{ include.type }}">
+                <h1 class="banner__title banner__title--{{ include.type }}">{{ include.title }}</h1>
+                <p class="banner__brief"> {{ brief | truncate: maxLength , "..." }}</p>
+                <p>
+                    <span class="banner__author">Author: </span>
+                    <span class="banner__author banner__author--name">{{ include.author }}</span>
+                </p>
+            </div>
+        </div>
+    </a>
+</div>
