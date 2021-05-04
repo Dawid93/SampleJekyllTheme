@@ -33,7 +33,11 @@ html {
   .container {
     margin: auto;
     width: 100%;
-    max-width: $desktop;
+    max-width: $large-screen-container-width;
+
+    @media screen and (max-width: $medium-screen-min-width) {
+      padding: 0 1rem;
+    }
   }
 
   .content {
@@ -45,4 +49,13 @@ html {
   .link {
     text-decoration: none;
     font-weight: 600;
+  }
+
+  .section {
+    &__title { 
+      font-family: "Inter";
+      font-size: 1.75rem;
+      margin: 1rem 0 3rem 0;
+      text-shadow: 0px 0px 4px black;
+    }
   }
