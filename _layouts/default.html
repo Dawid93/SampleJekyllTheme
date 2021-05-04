@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,24 +8,59 @@
     <title>Jekyll website</title>
     <link rel="stylesheet" href={{ "assets/css/main.css" | relative_url }} />
 </head>
+
 <body>
     <main class="main">
         {% include navigation.html %}
-        
+
         <section class="content container">
             <header class="header">
 
                 <div class="banner banner--radius banner__main">
-                    <img class="banner--radius banner__image" src="../assets/img/temp/polyCave.jpg"/>
-                    <div class="banner__overlay banner--radius"></div>
+                    <img class="banner--radius banner__image" src="../assets/img/temp/polyCave.jpg" />
+                    <a class="banner__link" href="#">
+                        <div class="banner__overlay banner--radius">
+                            <div class="banner__content">
+                                <h1 class="banner__title">Post title</h1>
+                                <p class="banner__short"> {{ "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam eveniet omnis vitae. Totam facere maxime magni impedit magnam voluptatem saepe numquam vel, fuga pariatur labore vitae corporis exercitationem, quo inventore earum autem eius sapiente neque expedita quis quasi ut possimus sed! Distinctio voluptatum itaque fuga laborum ad rerum voluptas possimus!" | truncate: 300, "..." }}</p>
+                                <p>
+                                    <span class="banner__author">Author: </span>
+                                    <span class="banner__author banner__author--name">Dave Donor</span>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="banner banner--radius banner__secondary">
+                    <img class="banner--radius banner__image" src="../assets/img/temp/sunset.jpeg" />
+                    <a class="banner__link" href="#">
+                        <div class="banner__overlay banner--radius">
+                            <div class="banner__content  banner__content--secondary">
+                                <h1 class="banner__title banner__title--secondary">Post title</h1>
+                                <p class="banner__short banner__short--secondary"> {{ "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam eveniet omnis vitae. Totam facere maxime magni impedit magnam voluptatem saepe numquam vel, fuga pariatur labore vitae corporis exercitationem, quo inventore earum autem eius sapiente neque expedita quis quasi ut possimus sed! Distinctio voluptatum itaque fuga laborum ad rerum voluptas possimus!" | truncate: 150, "..." }}</p>
+                                <p>
+                                    <span class="banner__author">Author: </span>
+                                    <span class="banner__author banner__author--name">Dave Donor</span>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
                 <div class="banner banner--radius banner__secondary">
-                    <img class="banner--radius banner__image" src="../assets/img/temp/sunset.jpeg"/>
-                    <div class="banner__overlay banner--radius"></div>
-                </div>
-                <div class="banner banner--radius banner__secondary">
-                    <img class="banner--radius banner__image" src="../assets/img/temp/waterfall.jpeg"/>
-                    <div class="banner__overlay banner--radius"></div>
+                    <img class="banner--radius banner__image" src="../assets/img/temp/waterfall.jpeg" />
+                    <a class="banner__link" href="#">
+                        <div class="banner__overlay banner--radius">
+                            <div class="banner__content banner__content--secondary">
+                                <h1 class="banner__title banner__title--secondary">Post title</h1>
+                                <p class="banner__short banner__short--secondary"> {{ "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam eveniet omnis vitae. Totam facere maxime magni impedit magnam voluptatem saepe numquam vel, fuga pariatur labore vitae corporis exercitationem, quo inventore earum autem eius sapiente neque expedita quis quasi ut possimus sed! Distinctio voluptatum itaque fuga laborum ad rerum voluptas possimus!" | truncate: 100, "..." }}</p>
+                                <p>
+                                    <span class="banner__author">Author: </span>
+                                    <span class="banner__author banner__author--name">Dave Donor</span>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </header>
         </section>
@@ -33,4 +69,5 @@
     </main>
     <script src="{{ "assets/js/main.js" | relative_url }}"></script>
 </body>
+
 </html>
