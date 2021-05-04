@@ -3,6 +3,7 @@ html {
     font-size: 18px;
     font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
+    height: 100%;
   
     @media screen and (max-width: $tablet) {
       font-size: 16px;
@@ -17,19 +18,31 @@ html {
   }
   
   body {
-    color: $text-color;
-    background: $background-color;
+    color: $main-text-color;
+    background: $main-background-color;
     width: 100%;
     height: 100%;
+  }
+
+  .main {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
   }
   
   .container {
     margin: auto;
+    width: 100%;
     max-width: $desktop;
+  }
+
+  .content {
+    min-height: 100%;
+    grid-row-start: 2;
+    grid-row-end: 3;
   }
   
   .link {
-    color: $linkBlue;
     text-decoration: none;
     font-weight: 600;
   }

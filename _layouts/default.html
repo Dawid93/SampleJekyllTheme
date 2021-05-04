@@ -1,15 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jekyll website</title>
-    <link rel="stylesheet" href={{ "assets/css/main.css" | relative_url }}
+    <link rel="stylesheet" href={{ "assets/css/main.css" | relative_url }} />
 </head>
+
 <body>
-    <main>
-        {{ content }}
+    <main class="main">
+        {% include navigation.html %}
+
+        <section class="content container">
+            <header class="header">
+
+                {% include banner.html type='main' 
+                image='assets/img/temp/polyCave.jpg'
+                maxLength='200'
+                author='Dave Donor'
+                title='Post Title'
+                brief='Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi magnam unde sunt beatae quisquam, ad repudiandae nobis molestias quis nam ea, atque recusandae eaque placeat rem optio natus aliquid porro hic quam. Reiciendis corporis harum quibusdam expedita eius, qui doloribus distinctio tempore quod. Beatae tempore ipsum molestias deleniti. Voluptatibus maiores, quis iure aliquid unde alias fugiat illo praesentium voluptates sed quos tempora vero laudantium perspiciatis animi aspernatur nobis molestias ducimus accusantium officiis est nostrum voluptatem dolores libero. Ratione quo repellendus rerum atque nihil, expedita nisi doloribus sapiente non voluptas porro quisquam nam eos? Reprehenderit dolores reiciendis pariatur inventore repellendus repellat doloremque ex unde veritatis illo asperiores, dolore fugiat velit consectetur impedit sed non quisquam vitae, maiores alias ducimus, incidunt temporibus laudantium! Praesentium alias repellat, voluptate ad beatae voluptatibus magni delectus? Mollitia velit quos ipsa minus nam. Harum ipsam, magni quisquam ab eos distinctio molestiae odit sunt aliquam et voluptate. Dolorum ipsam accusamus nobis architecto temporibus, quia, facilis laborum voluptatem deleniti amet quaerat ducimus? Est, itaque deleniti? Earum eius veritatis fuga, nesciunt facere, odio modi similique vitae, incidunt asperiores recusandae repudiandae rerum repellat dicta soluta. Obcaecati, dolorem sit atque numquam reprehenderit vel quo repellendus voluptate aliquid nemo fugiat dolores! Ipsa quia quisquam fuga, tempora nisi ratione totam consequuntur dolorem beatae velit? Quod tenetur praesentium totam impedit corrupti exercitationem mollitia voluptatibus ut possimus. Deleniti unde quo nemo doloribus veniam deserunt modi vel quaerat quod at ducimus, totam similique? Cupiditate ipsum velit quod hic consequuntur ut, ab expedita nulla officiis voluptatem labore? Dolores, fugiat, molestiae dolore exercitationem id animi quaerat asperiores quae optio odio facilis omnis ea corrupti suscipit eveniet atque temporibus ipsam facere ipsum expedita, a nulla. Mollitia et tempore accusamus eligendi nulla, voluptatum vitae facere commodi quisquam veniam aliquam aperiam? Neque animi magni cumque culpa earum accusamus aliquid quae doloremque, consequuntur sapiente aperiam eaque possimus debitis incidunt, ut, soluta corporis ipsum. Autem facere at perspiciatis tempora in saepe molestiae unde magnam, eaque laborum laudantium et doloribus vero temporibus odit? Necessitatibus similique, nisi nihil ea commodi quisquam autem iure enim harum veniam quibusdam aliquam ut libero possimus voluptas totam repellat illum non!' %}
+
+                {% include banner.html type='secondary' image='assets/img/temp/waterfall.jpeg'
+                maxLength='100'
+                author='Dave Donor'
+                title='Post Title'
+                brief='Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi magnam unde sunt beatae quisquam, ad repudiandae nobis molestias quis nam ea, atque recusandae eaque placeat rem optio natus aliquid porro hic quam. Reiciendis corporis harum quibusdam expedita eius, qui doloribus distinctio tempore quod. Beatae tempore ipsum molestias deleniti. Voluptatibus maiores, quis iure aliquid unde alias fugiat illo praesentium voluptates sed quos tempora vero laudantium perspiciatis animi aspernatur nobis molestias ducimus accusantium officiis est nostrum voluptatem dolores libero. Ratione quo repellendus rerum atque nihil, expedita nisi doloribus sapiente non voluptas porro quisquam nam eos? Reprehenderit dolores reiciendis pariatur inventore repellendus repellat doloremque ex unde veritatis illo asperiores, dolore fugiat velit consectetur impedit sed non quisquam vitae, maiores alias ducimus, incidunt temporibus laudantium! Praesentium alias repellat, voluptate ad beatae voluptatibus magni delectus? Mollitia velit quos ipsa minus nam. Harum ipsam, magni quisquam ab eos distinctio molestiae odit sunt aliquam et voluptate. Dolorum ipsam accusamus nobis architecto temporibus, quia, facilis laborum voluptatem deleniti amet quaerat ducimus? Est, itaque deleniti? Earum eius veritatis fuga, nesciunt facere, odio modi similique vitae, incidunt asperiores recusandae repudiandae rerum repellat dicta soluta. Obcaecati, dolorem sit atque numquam reprehenderit vel quo repellendus voluptate aliquid nemo fugiat dolores! Ipsa quia quisquam fuga, tempora nisi ratione totam consequuntur dolorem beatae velit? Quod tenetur praesentium totam impedit corrupti exercitationem mollitia voluptatibus ut possimus. Deleniti unde quo nemo doloribus veniam deserunt modi vel quaerat quod at ducimus, totam similique? Cupiditate ipsum velit quod hic consequuntur ut, ab expedita nulla officiis voluptatem labore? Dolores, fugiat, molestiae dolore exercitationem id animi quaerat asperiores quae optio odio facilis omnis ea corrupti suscipit eveniet atque temporibus ipsam facere ipsum expedita, a nulla. Mollitia et tempore accusamus eligendi nulla, voluptatum vitae facere commodi quisquam veniam aliquam aperiam? Neque animi magni cumque culpa earum accusamus aliquid quae doloremque, consequuntur sapiente aperiam eaque possimus debitis incidunt, ut, soluta corporis ipsum. Autem facere at perspiciatis tempora in saepe molestiae unde magnam, eaque laborum laudantium et doloribus vero temporibus odit? Necessitatibus similique, nisi nihil ea commodi quisquam autem iure enim harum veniam quibusdam aliquam ut libero possimus voluptas totam repellat illum non!' %}
+                {% include banner.html type='secondary' image='assets/img/temp/sunset.jpeg'
+                maxLength='100'
+                author='Dave Donor'
+                title='Post Title'
+                brief='Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi magnam unde sunt beatae quisquam, ad repudiandae nobis molestias quis nam ea, atque recusandae eaque placeat rem optio natus aliquid porro hic quam. Reiciendis corporis harum quibusdam expedita eius, qui doloribus distinctio tempore quod. Beatae tempore ipsum molestias deleniti. Voluptatibus maiores, quis iure aliquid unde alias fugiat illo praesentium voluptates sed quos tempora vero laudantium perspiciatis animi aspernatur nobis molestias ducimus accusantium officiis est nostrum voluptatem dolores libero. Ratione quo repellendus rerum atque nihil, expedita nisi doloribus sapiente non voluptas porro quisquam nam eos? Reprehenderit dolores reiciendis pariatur inventore repellendus repellat doloremque ex unde veritatis illo asperiores, dolore fugiat velit consectetur impedit sed non quisquam vitae, maiores alias ducimus, incidunt temporibus laudantium! Praesentium alias repellat, voluptate ad beatae voluptatibus magni delectus? Mollitia velit quos ipsa minus nam. Harum ipsam, magni quisquam ab eos distinctio molestiae odit sunt aliquam et voluptate. Dolorum ipsam accusamus nobis architecto temporibus, quia, facilis laborum voluptatem deleniti amet quaerat ducimus? Est, itaque deleniti? Earum eius veritatis fuga, nesciunt facere, odio modi similique vitae, incidunt asperiores recusandae repudiandae rerum repellat dicta soluta. Obcaecati, dolorem sit atque numquam reprehenderit vel quo repellendus voluptate aliquid nemo fugiat dolores! Ipsa quia quisquam fuga, tempora nisi ratione totam consequuntur dolorem beatae velit? Quod tenetur praesentium totam impedit corrupti exercitationem mollitia voluptatibus ut possimus. Deleniti unde quo nemo doloribus veniam deserunt modi vel quaerat quod at ducimus, totam similique? Cupiditate ipsum velit quod hic consequuntur ut, ab expedita nulla officiis voluptatem labore? Dolores, fugiat, molestiae dolore exercitationem id animi quaerat asperiores quae optio odio facilis omnis ea corrupti suscipit eveniet atque temporibus ipsam facere ipsum expedita, a nulla. Mollitia et tempore accusamus eligendi nulla, voluptatum vitae facere commodi quisquam veniam aliquam aperiam? Neque animi magni cumque culpa earum accusamus aliquid quae doloremque, consequuntur sapiente aperiam eaque possimus debitis incidunt, ut, soluta corporis ipsum. Autem facere at perspiciatis tempora in saepe molestiae unde magnam, eaque laborum laudantium et doloribus vero temporibus odit? Necessitatibus similique, nisi nihil ea commodi quisquam autem iure enim harum veniam quibusdam aliquam ut libero possimus voluptas totam repellat illum non!' %}
+            </header>
+        </section>
+
+        {% include footer.html %}
     </main>
+    <script src="{{ "assets/js/main.js" | relative_url }}"></script>
 </body>
+
 </html>

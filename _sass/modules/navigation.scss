@@ -1,0 +1,130 @@
+.navigation { 
+    background: $secondary-background-color;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    position: sticky;
+    box-shadow: 0 4px 4px $shadow-color;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    &__items {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        @media screen and (max-width: $mobile),
+        screen and (max-width: $tablet) {
+            justify-content: space-between;
+        }
+    }
+
+    &__item {
+        white-space: nowrap;
+        
+        &--link {
+            display: block;
+            width: auto;
+            order: 1;
+            padding-right: .5rem;
+
+            @media screen and (max-width: $mobile),
+            screen and (max-width: $tablet) {
+                width: 100%;
+                order: 2;
+                text-align: center;
+                padding: 1rem .5rem;
+                display: none;
+            }
+
+            &-active {
+                display: block;
+            }
+        }
+
+        &--logo {
+            order: 0;
+            flex: 1;
+        }
+    }
+
+    &__text {
+        color: $main-text-color;
+        text-decoration: none;
+        display: block;
+        width: auto;
+
+        &--link {
+            padding: 8px 12px;
+        }
+
+        &--link:hover {
+            border-radius: 5px;
+            background: $main-background-color;
+        }
+    }
+
+    &__toggle {
+        cursor: pointer;
+        display: none;
+
+        @media screen and (max-width: $mobile),
+        screen and (max-width: $tablet) {
+            order: 1;
+            display: block;
+
+            &--bars {
+                width: 20px;
+                height: 16px;
+                border: 0;
+                border-top: 2px solid $main-text-color;
+                background: transparent;
+                position: relative;
+
+                &::before, &::after {
+                    content: '';
+                    width: 100%;
+                    border-top: 2px solid $main-text-color;
+                    top: 6px;
+                    left: 0;
+                    position: absolute;
+                } 
+
+                &::after {
+                    top: 14px;
+                }
+            }
+        }
+    }
+}
+
+.logo {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.5rem;
+
+    &__dave {
+        font-weight: 400;
+
+        &::before {
+            content: '<';
+            font-weight: 500;
+            color: $selected-blue-color
+        }
+    }
+
+    &__dev {
+        font-weight: 200;
+
+        &::after {
+            content: '/>';
+            font-weight: 600;
+            color: $selected-blue-color;
+        }
+    }
+}

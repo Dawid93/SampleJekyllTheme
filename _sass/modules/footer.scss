@@ -1,0 +1,86 @@
+$social_icon_size: 60px;
+$social_icon_size_original: 90px;
+$icon_factor: calc(#{$social_icon_size / #{$social_icon_size_original}});
+
+.footer {
+    grid-row-start: 3;
+    grid-row-end: 4;
+
+    &__creator {
+        text-align: center;
+        font-size: 0.7rem;
+        font-family: 'Roboto-Mono', monospace;
+    }
+
+    &__secondary {
+        padding: .25rem;
+        background: $tertiary-background-color;
+    }
+
+    &__main {
+        padding: 1rem;
+        background: $secondary-background-color;
+    }
+}
+
+.social {
+    width: $social_icon_size;
+    height: $social_icon_size;
+    position: relative;
+    margin-right: .25rem;
+    
+    &__background {
+        width: $social_icon_size;
+        height: $social_icon_size;
+        
+        content: url(../../assets/img/socials/social_bg.png);
+
+        &:hover {
+            content: url(../../assets/img/socials/social_bg_selected.png);
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        pointer-events: none;
+
+        @mixin socialIconVariant($widthBg, $heightBg, $iconWidth, $iconHeight, $imgSrc) {
+            $imageWidth: calc(#{$iconWidth} * #{$icon_factor});
+            $imageHeight: calc(#{$iconHeight} * #{$icon_factor});
+
+            width: $imageWidth;
+            height: $imageHeight;
+
+            top: calc(#{$heightBg} / 2 - #{$imageHeight} / 2);
+            left: calc(#{$widthBg} / 2 - #{$imageWidth} / 2);
+            content: url($imgSrc);
+        }
+        
+        &--linkedin {
+            @include socialIconVariant($social_icon_size, $social_icon_size, 28px, 28px, "../../assets/img/socials/linkedin.png");
+        }
+
+        &--youtube {
+            @include socialIconVariant($social_icon_size, $social_icon_size, 33px, 23px, "../../assets/img/socials/youtube.png");
+        }
+
+        &--github {
+            @include socialIconVariant($social_icon_size, $social_icon_size, 30px, 30px, "../../assets/img/socials/github.png");
+        }
+
+        &--twitter {
+            @include socialIconVariant($social_icon_size, $social_icon_size, 30px, 25px, "../../assets/img/socials/twitter.png");
+        }
+
+        &--facebook {
+            @include socialIconVariant($social_icon_size, $social_icon_size, 28px, 28px, "../../assets/img/socials/facebook.png");
+        }
+    }
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding-inline-start: 0;
+}
