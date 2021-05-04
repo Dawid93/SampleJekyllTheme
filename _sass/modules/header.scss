@@ -2,6 +2,8 @@
     box-shadow: 0 8px 4px $shadow-color;
     font-family: "Inter";
     text-shadow: 0px 0px 4px $shadow-color;
+    height: 100%;
+    width: 100%;
 
     &__content {
         height: 100%;
@@ -83,6 +85,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        overflow: hidden;
     }
 
     &__overlay {
@@ -92,7 +95,6 @@
         height: 100%;
         background: rgb(0,0,0);
         background: linear-gradient(360deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.15) 50%, rgba(255,255,255,0) 100%);
-
         &:hover {
             background: none;
         }
@@ -107,7 +109,7 @@
     margin: 4rem 0rem;
     height: 100%;
     // width: clac(100% - calc(2 * 2rem));
-    max-width: $desktop;
+    max-width: $large-screen-container-width;
     display: grid;
     gap: 1rem;
     grid-template-rows: 2fr 1fr;
