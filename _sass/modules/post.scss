@@ -8,8 +8,8 @@
 
     @media screen and (max-width: $medium-screen-min-width) {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
         gap: 2rem;
+        margin: 1rem 0 1.5rem 0;
     }
 
     &__author {
@@ -26,7 +26,6 @@
     }
 
     &__container {
-        margin: 0 0rem 2rem 0;
     }
 
     &__image {
@@ -34,10 +33,16 @@
         max-height: 100%;
         border-radius: 8px;
         box-shadow: 0 8px 4px $shadow-color;
+        object-fit: cover;
     }
 
     &__title {
         margin-top: 0;
         font-weight: normal;
     }
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
 }
