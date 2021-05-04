@@ -1,0 +1,11 @@
+{% assign brief = include.brief %}
+
+<article class="post">
+    <img class="post__image" src="{{ include.image }}">
+    <div class="post__container">
+    <h2 class="post__title">{{ include.title }}</h2>
+    <p class="post__brief">{{ brief | truncate: 300 , "..." }}</p>
+    <span class="post__author">Author: </span>
+    <span class="post__author post__author--name">{{ include.author }}</span>
+    </div>
+</article>
