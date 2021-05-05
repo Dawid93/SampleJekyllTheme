@@ -13,50 +13,60 @@
     <main class="main content">
         {% include navigation.html %}
 
-        <section class="container section">
-            <header class="header">
-                {% if site.posts.size > 0 %}
-                {% assign post = site.posts[0] %}
-                {% assign image_path = post.image | relative_url %}
-                {% include banner.html
-                type='main'
-                image=image_path
-                title=post.title
-                brief=post.excerpt
-                maxLength=250
-                author=post.author %}
-                {% endif %}
+        {% if paginator.page == 1 %}
+            <section class="container section">
+                <header class="header">
+                    {% if site.posts.size > 0 %}
+                    {% assign post = site.posts[0] %}
+                    {% assign image_path = post.image | relative_url %}
+                    {% include banner.html
+                    type='main'
+                    image=image_path
+                    title=post.title
+                    brief=post.excerpt
+                    maxLength=250
+                    author=post.author %}
+                    {% endif %}
 
-                {% if site.posts.size > 1 %}
-                {% assign post = site.posts[1] %}
-                {% assign image_path = post.image | relative_url %}
-                {% include banner.html
-                type='secondary'
-                image=image_path
-                title=post.title
-                brief=post.excerpt
-                maxLength=150
-                author=post.author %}
-                {% endif %}
+                    {% if site.posts.size > 1 %}
+                    {% assign post = site.posts[1] %}
+                    {% assign image_path = post.image | relative_url %}
+                    {% include banner.html
+                    type='secondary'
+                    image=image_path
+                    title=post.title
+                    brief=post.excerpt
+                    maxLength=150
+                    author=post.author %}
+                    {% endif %}
 
-                {% if site.posts.size > 2 %}
-                {% assign post = site.posts[2] %}
-                {% assign image_path = post.image | relative_url %}
-                {% include banner.html
-                type='secondary'
-                image=image_path
-                title=post.title
-                brief=post.excerpt
-                maxLength=150
-                author=post.author %}
-                {% endif %}
-            </header>
-        </section>
+                    {% if site.posts.size > 2 %}
+                    {% assign post = site.posts[2] %}
+                    {% assign image_path = post.image | relative_url %}
+                    {% include banner.html
+                    type='secondary'
+                    image=image_path
+                    title=post.title
+                    brief=post.excerpt
+                    maxLength=150
+                    author=post.author %}
+                    {% endif %}
+                </header>
+            </section>
+        {% endif %}
 
         {% if site.posts.size > 3 %}
         <section class="container section posts">
-            <h1 class="section__title">Poprzednie posty:</h1>
-            {% for post in site.posts offset: 3 limit: 7 %}
+            {% if paginator.page == 1 %}
+                <h1 class="section__title">Poprzednie posty:</h1>
+                {% assign startFromPost = 3 %}
+                {% assign show = paginator.per_page | minus: 3 %}
+            {% else %}
+                {% assign startFromPost = 0 %}
+                {% assign show = paginator.per_page %}
+            {% endif %}
+            
+            {% for post in site.posts offset: startFromPost limit: show %}
             {% assign image_path = post.image | relative_url %}
             {% include post.html
             image=image_path
