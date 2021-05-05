@@ -51,8 +51,8 @@ $icon_factor: calc(#{$social_icon_size / #{$social_icon_size_original}});
             width: $imageWidth;
             height: $imageHeight;
 
-            top: calc(#{$heightBg} / 2 - #{$imageHeight} / 2);
-            left: calc(#{$widthBg} / 2 - #{$imageWidth} / 2);
+            top: calc(#{$heightBg} / 2 - calc(#{$imageHeight} / 2));
+            left: calc(#{$widthBg} / 2 - calc(#{$imageWidth} / 2));
             content: url($imgSrc);
         }
         
