@@ -16,36 +16,39 @@
         <section class="container section">
             <header class="header">
                 {% if site.posts.size > 0 %}
-                    {% assign post = site.posts[0] %}
-                    {% include banner.html
-                        type='main'
-                        image=post.image
-                        title=post.title
-                        brief=post.excerpt
-                        maxLength=250
-                        author=post.author %}
+                {% assign post = site.posts[0] %}
+                {% assign image_path = post.image | relative_url %}
+                {% include banner.html
+                type='main'
+                image=image_path
+                title=post.title
+                brief=post.excerpt
+                maxLength=250
+                author=post.author %}
                 {% endif %}
 
                 {% if site.posts.size > 1 %}
-                    {% assign post = site.posts[1] %}
-                    {% include banner.html
-                        type='secondary'
-                        image=post.image
-                        title=post.title
-                        brief=post.excerpt
-                        maxLength=150
-                        author=post.author %}
+                {% assign post = site.posts[1] %}
+                {% assign image_path = post.image | relative_url %}
+                {% include banner.html
+                type='secondary'
+                image=image_path
+                title=post.title
+                brief=post.excerpt
+                maxLength=150
+                author=post.author %}
                 {% endif %}
 
                 {% if site.posts.size > 2 %}
-                    {% assign post = site.posts[2] %}
-                    {% include banner.html
-                        type='secondary'
-                        image=post.image
-                        title=post.title
-                        brief=post.excerpt
-                        maxLength=150
-                        author=post.author %}
+                {% assign post = site.posts[2] %}
+                {% assign image_path = post.image | relative_url %}
+                {% include banner.html
+                type='secondary'
+                image=image_path
+                title=post.title
+                brief=post.excerpt
+                maxLength=150
+                author=post.author %}
                 {% endif %}
             </header>
         </section>
@@ -53,19 +56,48 @@
         {% if site.posts.size > 3 %}
         <section class="container section posts">
             <h1 class="section__title">Poprzednie posty:</h1>
-            {% for post in site.posts offset: 3 %}
-                {%  include post.html
-                    image=post.image
-                    author=post.author
-                    title=post.title
-                    brief=post.excerpt %}
+            {% for post in site.posts offset: 3 limit: 7 %}
+            {% assign image_path = post.image | relative_url %}
+            {% include post.html
+            image=image_path
+            author=post.author
+            title=post.title
+            brief=post.excerpt %}
             {% endfor %}
         </section>
         {% endif %}
 
+        <div class="container">
+            {% if paginator.total_pages > 1 %}
+            <div class="pagination">
+                {% if paginator.previous_page %}
+                <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; Prev</a>
+                {% else %}
+                <span>&laquo; Prev</span>
+                {% endif %}
+
+                {% for page in (1..paginator.total_pages) %}
+                {% if page == paginator.page %}
+                <em>{{ page }}</em>
+                {% elsif page == 1 %}
+                <a href="/">{{ page }}</a>
+                {% else %}
+                <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+                {% endif %}
+                {% endfor %}
+
+                {% if paginator.next_page %}
+                <a href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a>
+                {% else %}
+                <span>Next &raquo;</span>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+
         {% include footer.html %}
     </main>
-    <script src="{{ "assets/js/main.js" | relative_url }}"></script>
+    <script src="{{ " assets/js/main.js" | relative_url }}"></script>
 </body>
 
 </html>
