@@ -19,11 +19,13 @@
                 {% if site.posts.size > 0 %}
                 {% assign post = site.posts[0] %}
                 {% assign image_path = post.image | relative_url %}
+                {% assign postUrl = post.url | relative_url %}
                 {% include banner.html
                 type='main'
                 image=image_path
                 title=post.title
                 brief=post.excerpt
+                postUrl=postUrl
                 maxLength=250
                 author=post.author %}
                 {% endif %}
@@ -31,11 +33,13 @@
                 {% if site.posts.size > 1 %}
                 {% assign post = site.posts[1] %}
                 {% assign image_path = post.image | relative_url %}
+                {% assign postUrl = post.url | relative_url %}
                 {% include banner.html
                 type='secondary'
                 image=image_path
                 title=post.title
                 brief=post.excerpt
+                postUrl=postUrl
                 maxLength=150
                 author=post.author %}
                 {% endif %}
@@ -43,11 +47,13 @@
                 {% if site.posts.size > 2 %}
                 {% assign post = site.posts[2] %}
                 {% assign image_path = post.image | relative_url %}
+                {% assign postUrl = post.url | relative_url %}
                 {% include banner.html
                 type='secondary'
                 image=image_path
                 title=post.title
                 brief=post.excerpt
+                postUrl=postUrl
                 maxLength=150
                 author=post.author %}
                 {% endif %}
@@ -68,10 +74,12 @@
 
             {% for post in site.posts offset: startFromPost limit: show %}
             {% assign image_path = post.image | relative_url %}
+            {% assign postUrl = post.url | relative_url %}
             {% include post.html
             image=image_path
             author=post.author
             title=post.title
+            postUrl=postUrl
             brief=post.excerpt %}
             {% endfor %}
         </section>
