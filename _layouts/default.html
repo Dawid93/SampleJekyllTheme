@@ -14,58 +14,58 @@
         {% include navigation.html %}
 
         {% if paginator.page == 1 %}
-            <section class="container section">
-                <header class="header">
-                    {% if site.posts.size > 0 %}
-                    {% assign post = site.posts[0] %}
-                    {% assign image_path = post.image | relative_url %}
-                    {% include banner.html
-                    type='main'
-                    image=image_path
-                    title=post.title
-                    brief=post.excerpt
-                    maxLength=250
-                    author=post.author %}
-                    {% endif %}
+        <section class="container section">
+            <header class="header">
+                {% if site.posts.size > 0 %}
+                {% assign post = site.posts[0] %}
+                {% assign image_path = post.image | relative_url %}
+                {% include banner.html
+                type='main'
+                image=image_path
+                title=post.title
+                brief=post.excerpt
+                maxLength=250
+                author=post.author %}
+                {% endif %}
 
-                    {% if site.posts.size > 1 %}
-                    {% assign post = site.posts[1] %}
-                    {% assign image_path = post.image | relative_url %}
-                    {% include banner.html
-                    type='secondary'
-                    image=image_path
-                    title=post.title
-                    brief=post.excerpt
-                    maxLength=150
-                    author=post.author %}
-                    {% endif %}
+                {% if site.posts.size > 1 %}
+                {% assign post = site.posts[1] %}
+                {% assign image_path = post.image | relative_url %}
+                {% include banner.html
+                type='secondary'
+                image=image_path
+                title=post.title
+                brief=post.excerpt
+                maxLength=150
+                author=post.author %}
+                {% endif %}
 
-                    {% if site.posts.size > 2 %}
-                    {% assign post = site.posts[2] %}
-                    {% assign image_path = post.image | relative_url %}
-                    {% include banner.html
-                    type='secondary'
-                    image=image_path
-                    title=post.title
-                    brief=post.excerpt
-                    maxLength=150
-                    author=post.author %}
-                    {% endif %}
-                </header>
-            </section>
+                {% if site.posts.size > 2 %}
+                {% assign post = site.posts[2] %}
+                {% assign image_path = post.image | relative_url %}
+                {% include banner.html
+                type='secondary'
+                image=image_path
+                title=post.title
+                brief=post.excerpt
+                maxLength=150
+                author=post.author %}
+                {% endif %}
+            </header>
+        </section>
         {% endif %}
 
         {% if site.posts.size > 3 %}
         <section class="container section posts">
             {% if paginator.page == 1 %}
-                <h1 class="section__title">Poprzednie posty:</h1>
-                {% assign startFromPost = 3 %}
-                {% assign show = paginator.per_page | minus: 3 %}
+            <h1 class="section__title">Poprzednie posty:</h1>
+            {% assign startFromPost = 3 %}
+            {% assign show = paginator.per_page | minus: 3 %}
             {% else %}
-                {% assign startFromPost = 0 %}
-                {% assign show = paginator.per_page %}
+            {% assign startFromPost = 0 %}
+            {% assign show = paginator.per_page %}
             {% endif %}
-            
+
             {% for post in site.posts offset: startFromPost limit: show %}
             {% assign image_path = post.image | relative_url %}
             {% include post.html
@@ -77,33 +77,9 @@
         </section>
         {% endif %}
 
-        <div class="container">
-            {% if paginator.total_pages > 1 %}
-            <div class="pagination">
-                {% if paginator.previous_page %}
-                <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; Prev</a>
-                {% else %}
-                <span>&laquo; Prev</span>
-                {% endif %}
-
-                {% for page in (1..paginator.total_pages) %}
-                {% if page == paginator.page %}
-                <em>{{ page }}</em>
-                {% elsif page == 1 %}
-                <a href="/">{{ page }}</a>
-                {% else %}
-                <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
-                {% endif %}
-                {% endfor %}
-
-                {% if paginator.next_page %}
-                <a href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a>
-                {% else %}
-                <span>Next &raquo;</span>
-                {% endif %}
-            </div>
-            {% endif %}
-        </div>
+        <section class="container">
+            {% include pagination.html %}
+        </section>
 
         {% include footer.html %}
     </main>
