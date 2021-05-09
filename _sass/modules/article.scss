@@ -1,0 +1,93 @@
+.article {
+    font-family: "Inter";
+    font-weight: 300;
+    line-height: 1.25rem;
+    text-shadow: 0px 0px 12px black;
+
+    &__author {
+        font-size: .75rem;
+        font-weight: 100;
+
+        &--image {
+            margin-right: 0.5rem;
+            height: 1rem;
+            content: url(../../assets/img/common/author.png);
+        }
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+
+        &--horizontal {
+            flex-direction: row;
+            justify-content: start;
+        }
+
+        &--margin-right {
+            padding-right: 1rem;
+        }
+    }
+
+    &__content {
+        img {
+            display: block;
+            margin: 2rem auto;
+            max-width: 80%;
+            border-radius: 8px;
+            box-shadow: 0 8px 4px $shadow-color;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        pre {
+            overflow: scroll;
+            overflow-x: auto;
+            overflow-y: auto;
+            font-size: 0.8rem;
+            margin: 1rem;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        &--video {
+            margin: 2rem auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 8px 4px $shadow-color;
+        }
+    }
+
+    &__date {
+        font-size: .75rem;
+        font-weight: 100;
+
+        &--image {
+            margin-right: 0.5rem;
+            height: 1rem;
+            content: url(../../assets/img/common/date.png);
+        }
+    }
+
+    &__hero-image {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 8px 4px $shadow-color;
+    }
+
+    &__info {
+        
+    }
+
+    &__subtitle {
+        font-size: 1.5rem;
+    }
+    
+    &__title {
+        font-weight: 500;
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+}

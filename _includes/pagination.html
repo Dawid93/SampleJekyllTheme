@@ -1,0 +1,38 @@
+<div class="paginator">
+    {% if paginator.total_pages > 1 %}
+    <div class="pagination">
+        {% if paginator.previous_page %}
+            {% assign url = paginator.previous_page_path | relative_url %}
+            {% include pagination_icon.html
+                pageUrl = url
+                type = "control"
+                btnContent ='&#8592;' %}
+        {% endif %}
+
+        {% for page in (1..paginator.total_pages) %}
+            {% if page == paginator.page %}
+                {% include pagination_icon.html
+                    active=true
+                    btnContent = page %}
+            {% elsif page == 1 %}
+                {% include pagination_icon.html
+                    pageUrl = "/SampleJekyllTheme" 
+                    btnContent = page %}
+            {% else %}
+                {% assign url = site.paginate_path | relative_url | replace: ':num', page %}
+                {% include pagination_icon.html
+                    pageUrl = url 
+                    btnContent = page %}
+            {% endif %}
+        {% endfor %}
+
+        {% if paginator.next_page %}
+            {% assign url = paginator.next_page_path | relative_url %}
+            {% include pagination_icon.html
+                pageUrl = url
+                type = "control"
+                btnContent ='&#8594;' %}
+        {% endif %}
+    </div>
+    {% endif %}
+</div>

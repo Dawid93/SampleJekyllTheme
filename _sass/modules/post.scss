@@ -36,6 +36,15 @@
         object-fit: cover;
     }
 
+    &__link {
+        text-decoration: none;
+        color: $main-text-color;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
     &__title {
         margin-top: 0;
         font-weight: normal;

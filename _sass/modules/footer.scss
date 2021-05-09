@@ -40,40 +40,42 @@ $icon_factor: calc(#{$social_icon_size / #{$social_icon_size_original}});
         }
     }
 
-    &__icon {
+    &__container {
+        top: 0;
         position: absolute;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         pointer-events: none;
+    }
 
-        @mixin socialIconVariant($widthBg, $heightBg, $iconWidth, $iconHeight, $imgSrc) {
-            $imageWidth: calc(#{$iconWidth} * #{$icon_factor});
-            $imageHeight: calc(#{$iconHeight} * #{$icon_factor});
+    &__icon {
 
-            width: $imageWidth;
-            height: $imageHeight;
-
-            top: calc(#{$heightBg} / 2 - #{$imageHeight} / 2);
-            left: calc(#{$widthBg} / 2 - #{$imageWidth} / 2);
+        @mixin socialIconVariant($imgSrc) {
+            width: 40%;
             content: url($imgSrc);
         }
         
         &--linkedin {
-            @include socialIconVariant($social_icon_size, $social_icon_size, 28px, 28px, "../../assets/img/socials/linkedin.png");
+            @include socialIconVariant("../../assets/img/socials/linkedin.png");
         }
 
         &--youtube {
-            @include socialIconVariant($social_icon_size, $social_icon_size, 33px, 23px, "../../assets/img/socials/youtube.png");
+            @include socialIconVariant("../../assets/img/socials/youtube.png");
         }
 
         &--github {
-            @include socialIconVariant($social_icon_size, $social_icon_size, 30px, 30px, "../../assets/img/socials/github.png");
+            @include socialIconVariant("../../assets/img/socials/github.png");
         }
 
         &--twitter {
-            @include socialIconVariant($social_icon_size, $social_icon_size, 30px, 25px, "../../assets/img/socials/twitter.png");
+            @include socialIconVariant("../../assets/img/socials/twitter.png");
         }
 
         &--facebook {
-            @include socialIconVariant($social_icon_size, $social_icon_size, 28px, 28px, "../../assets/img/socials/facebook.png");
+            @include socialIconVariant("../../assets/img/socials/facebook.png");
         }
     }
 }

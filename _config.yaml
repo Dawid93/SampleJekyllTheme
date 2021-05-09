@@ -1,1 +1,10 @@
 name: Jekyll Workshop
+paginate: 8
+paginate_path: "SampleJekyllTheme/page:num"
+markdown: kramdown
+highlighter: rouge
+
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-sitemap

@@ -21,6 +21,18 @@
             width: 100%;
             padding: 0 1rem;
         }
+
+        @media screen and (max-width: $medium-screen-min-width) {
+            &--main {
+                width: 100%;
+                padding: 0 1rem;
+            }
+    
+            &--secondary {
+                width: 100%;
+                padding: 0 1rem;
+            }
+        }
     }
 
     &__author {
@@ -42,6 +54,16 @@
         &--secondary {
             font-size: 1.5rem;
         }
+
+        @media screen and (max-width: $medium-screen-min-width) {
+            &--main {
+                font-size: 1.5rem;
+            }
+    
+            &--secondary {
+                font-size: 1.5rem;
+            }
+        }
     }
 
     &__brief {
@@ -49,6 +71,10 @@
         font-weight: 300;
         margin: 0 0 .5rem 0;
         line-height: 1.2rem;
+
+        @media screen and (max-width: $medium-screen-min-width) {
+            display: none;
+        }
     }
 
     &__link {
@@ -64,8 +90,7 @@
 
         @media screen and (max-width: $medium-screen-min-width) {
             grid-area: auto;
-            grid-area: 1 / 1 / 2 / 2;
-            max-height: 300px;
+            height: 250px;
         }
     }
 
@@ -75,9 +100,8 @@
         position: relative;
 
         @media screen and (max-width: $medium-screen-min-width) {
-            grid-row-start: auto;
             grid-area: auto;
-            max-height: 200px;
+            height: 250px;
         }
     }
 
@@ -98,6 +122,10 @@
         &:hover {
             background: none;
         }
+
+        @media screen and (max-width: $medium-screen-min-width) {
+            background: none;
+        }
     }
 
     &--radius {
@@ -114,7 +142,7 @@
     grid-template-columns: repeat(2, 1fr);
 
     @media screen and (max-width: $medium-screen-min-width) {
-        grid-template-rows: 1.5fr 1fr;
+        grid-template-rows: 1fr;
         grid-template-columns: 1fr;
         gap: 2rem;
     }
