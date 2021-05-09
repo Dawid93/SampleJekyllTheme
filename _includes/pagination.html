@@ -11,8 +11,8 @@
 
         {% for page in (1..paginator.total_pages) %}
             {% if page == paginator.page %}
-            {{ page paginator.page }}
                 {% include pagination_icon.html
+                    active=true
                     btnContent = page %}
             {% elsif page == 1 %}
                 {% include pagination_icon.html

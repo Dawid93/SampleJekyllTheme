@@ -1,4 +1,10 @@
-<a class="pagination__button pagination__button--link" href={{ include.pageUrl }}>
+{% if include.active == true %}
+    {% assign active = "pagination__button--active" %}
+{% else %}
+    {% assign active = "" %}
+{% endif %}
+
+<a class="pagination__button pagination__button--link {{ active }}" href={{ include.pageUrl }}>
     <div>
         {{ include.btnContent }}
     </div>
