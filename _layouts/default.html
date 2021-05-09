@@ -64,23 +64,24 @@
         {% if site.posts.size > 3 %}
         <section class="container section posts">
             {% if paginator.page == 1 %}
-            <h1 class="section__title">Poprzednie posty:</h1>
-            {% assign startFromPost = 3 %}
-            {% assign show = paginator.per_page | minus: 3 %}
+                <h1 class="section__title">Poprzednie posty:</h1>
+                {% assign startFromPost = 3 %}
+                {% assign show = paginator.per_page | minus: 3 %}
             {% else %}
-            {% assign startFromPost = 0 %}
-            {% assign show = paginator.per_page %}
+                {% assign startFromPost = 0 %}
+                {% assign show = paginator.per_page %}
             {% endif %}
 
             {% for post in site.posts offset: startFromPost limit: show %}
-            {% assign image_path = post.image | relative_url %}
-            {% assign postUrl = post.url | relative_url %}
-            {% include post.html
-            image=image_path
-            author=post.author
-            title=post.title
-            postUrl=postUrl
-            brief=post.excerpt %}
+                {% assign image_path = post.image | relative_url %}
+                {% assign postUrl = post.url | relative_url %}
+                {% include post.html
+                image=image_path
+                author=post.author
+                title=post.title
+                postUrl=postUrl
+                brief=post.excerpt
+                categories=post.categories %}
             {% endfor %}
         </section>
         {% endif %}

@@ -1,0 +1,21 @@
+.categories {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.category {
+    font-family: "Inter";
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    color: white;
+    margin: 0 8px 4px 0px;
+    border-radius: 8px;
+
+    &__name {
+        font-size: .5rem;
+        font-weight: 400;
+        margin: 4px;
+    }
+}
