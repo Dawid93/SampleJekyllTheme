@@ -8,7 +8,7 @@
         <a class="post__link" href="{{ postUrl }}"><h2 class="post__title">{{ include.title }}</h2></a>
         <div class="categories">
             {% for category in categories %}
-                {% include category.html
+                {% include category-button.html
                     categoryName = category
                 %}
             {% endfor %}

@@ -10,12 +10,12 @@
                 <h1 class="banner__title banner__title--{{ include.type }}">{{ include.title }}</h1>
                 <div class="categories">
                     {% for category in categories %}
-                        {% include category.html
+                        {% include category-button.html
                             categoryName = category
                         %}
                     {% endfor %}
                 </div>
-                
+
                 <div class="post__container post__container--horizontal">
                     <div class="post__container post__container--horizontal post__container--margin-right">
                         <img class="post__author--image" />
