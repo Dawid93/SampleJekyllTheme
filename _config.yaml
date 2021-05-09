@@ -1,7 +1,6 @@
 name: Jekyll Workshop
 paginate: 8
 paginate_path: "SampleJekyllTheme/page:num"
-permalink: /:categories/:title/
 markdown: kramdown
 highlighter: rouge
 url: https://dawid93.github.io/SampleJekyllTheme

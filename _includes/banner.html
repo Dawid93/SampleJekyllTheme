@@ -1,6 +1,6 @@
-{% assign maxLength = include.maxLength %}
-{% assign brief = include.brief %}
 {% assign postUrl = include.postUrl %}
+{% assign categories = include.categories %}
+{% assign postDate = include.postDate %}
 
 <div class="banner banner--radius banner__{{ include.type }}">
     <img class="banner--radius banner__image" src="{{ include.image }}" />
@@ -8,11 +8,24 @@
         <div class="banner__overlay banner--radius">
             <div class="banner__content banner__content--{{ include.type }}">
                 <h1 class="banner__title banner__title--{{ include.type }}">{{ include.title }}</h1>
-                <p class="banner__brief"> {{ brief | truncate: maxLength , "..." | strip_html }}</p>
-                <p>
-                    <span class="banner__author">Author: </span>
-                    <span class="banner__author banner__author--name">{{ include.author }}</span>
-                </p>
+                <div class="categories">
+                    {% for category in categories %}
+                        {% include category.html
+                            categoryName = category
+                        %}
+                    {% endfor %}
+                </div>
+                
+                <div class="post__container post__container--horizontal">
+                    <div class="post__container post__container--horizontal post__container--margin-right">
+                        <img class="post__author--image" />
+                        <span class="post__author">{{ include.author }}</span>
+                    </div>
+                    <div class="post__container post__container--horizontal post__container--margin-right">
+                        <img class="post__date--image" />
+                        <span class="post__date">{{ include.postDate | date_to_string }}</span>
+                    </div>
+                </div>
             </div>
         </div>
     </a>

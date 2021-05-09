@@ -16,7 +16,7 @@
                     btnContent = page %}
             {% elsif page == 1 %}
                 {% include pagination_icon.html
-                    pageUrl = "/SampleJekyllTheme" 
+                    pageUrl = site.url 
                     btnContent = page %}
             {% else %}
                 {% assign url = site.paginate_path | relative_url | replace: ':num', page %}

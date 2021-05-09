@@ -8,35 +8,45 @@
     <title>Jekyll website</title>
     <link rel="stylesheet" href={{ "assets/css/main.css" | relative_url }} />
     <link rel="stylesheet" href={{ "assets/css/monokai.css" | relative_url }} />
-
 </head>
 
 <body>
-    <main class="main content">
+    <main class="main">
         {% include navigation.html %}
-        <header class="container section">
-            <img class="article__hero-image" src="{{ page.image | relative_url }}" />
-        </header>
+        <div class="content">
+            <header class="container section">
+                <img class="article__hero-image" src="{{ page.image | relative_url }}" />
+            </header>
 
-        <article class="container article">
-            <section class="article__info">
-                <h1 class="article article__title">{{ page.title }}</h1>
-                <div class="article__container article__container--horizontal">
-                    <div class="article__container article__container--margin-right">
-                        <img class="article__author--image" />
-                        <span class="article__author">{{ page.author }}</span>
+            <article class="container article">
+                <section class="article__info">
+                    <h1 class="article article__title">{{ page.title }}</h1>
+                    
+                    <div class="categories">
+                        {% for category in page.categories %}
+                            {% include category.html
+                                categoryName = category
+                            %}
+                        {% endfor %}
                     </div>
-                    <div class="article__container article__container--margin-right">
-                        <img class="article__date--image" />
-                        <span class="article__date">{{ page.date | date_to_string }}</span>
+
+                    <div class="article__container article__container--horizontal">
+                        <div class="article__container article__container--margin-right">
+                            <img class="article__author--image" />
+                            <span class="article__author">{{ page.author }}</span>
+                        </div>
+                        <div class="article__container article__container--margin-right">
+                            <img class="article__date--image" />
+                            <span class="article__date">{{ page.date | date_to_string }}</span>
+                        </div>
                     </div>
-                </div>
-            </section>
-            
-            <section class="section article__content">
-                {{ content }}
-            </section>
-        </article>
+                </section>
+                
+                <section class="section article__content">
+                    {{ content }}
+                </section>
+            </article>
+        </div>
         {% include footer.html %}
     </main>
     <script src="{{ "assets/js/main.js" | relative_url }}"></script>

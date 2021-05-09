@@ -14,10 +14,23 @@
 
     &__author {
         font-size: 0.75rem;
-        font-weight: 500;
+        font-weight: 200;
 
-        &--name {
-            font-weight: 200;
+        &--image {
+            margin-right: 0.5rem;
+            height: 1rem;
+            content: url(../../assets/img/common/author.png);
+        }
+    }
+
+    &__date {
+        font-size: 0.75rem;
+        font-weight: 200;
+
+        &--image {
+            margin-right: 0.5rem;
+            height: 1rem;
+            content: url(../../assets/img/common/date.png);
         }
     }
 
@@ -26,6 +39,22 @@
     }
 
     &__container {
+        display: flex;
+
+        &--vertical {
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        &--horizontal {
+            align-items: center;
+            flex-direction: row;
+            justify-content: start;
+        }
+
+        &--margin-right {
+            padding-right: 1rem;
+        }
     }
 
     &__image {
@@ -47,6 +76,7 @@
 
     &__title {
         margin-top: 0;
+        margin-bottom: 16px;
         font-weight: normal;
     }
 }

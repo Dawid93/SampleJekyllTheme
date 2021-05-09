@@ -14,23 +14,23 @@
 
         &--main {
             width: 80%;
-            padding: 0 2rem;
+            padding: 1rem 2rem;
         }
 
         &--secondary {
             width: 100%;
-            padding: 0 1rem;
+            padding: 1rem 1rem;
         }
 
         @media screen and (max-width: $medium-screen-min-width) {
             &--main {
                 width: 100%;
-                padding: 0 1rem;
+                padding: 1rem 1rem;
             }
     
             &--secondary {
                 width: 100%;
-                padding: 0 1rem;
+                padding: 1rem 1rem;
             }
         }
     }
