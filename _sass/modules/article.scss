@@ -29,6 +29,20 @@
         }
     }
 
+    &__content {
+        img {
+            display: block;
+            margin: 1rem auto;
+            max-width: 80%;
+            border-radius: 8px;
+            box-shadow: 0 8px 4px $shadow-color;
+        }
+
+        p {
+            text-align: justify;
+        }
+    }
+
     &__date {
         font-size: .75rem;
         font-weight: 100;
@@ -46,15 +60,8 @@
         box-shadow: 0 8px 4px $shadow-color;
     }
 
-    &__image {
-
-    }
-
     &__info {
         
-    }
-    
-    &__paragraph {
     }
 
     &__subtitle {
