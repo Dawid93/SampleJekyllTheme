@@ -32,7 +32,7 @@
     &__content {
         img {
             display: block;
-            margin: 1rem auto;
+            margin: 2rem auto;
             max-width: 80%;
             border-radius: 8px;
             box-shadow: 0 8px 4px $shadow-color;
@@ -40,6 +40,23 @@
 
         p {
             text-align: justify;
+        }
+
+        pre {
+            overflow: scroll;
+            overflow-x: auto;
+            overflow-y: auto;
+            font-size: 0.8rem;
+            margin: 1rem;
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        &--video {
+            margin: 2rem auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 8px 4px $shadow-color;
         }
     }
 
