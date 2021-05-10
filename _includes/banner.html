@@ -16,16 +16,9 @@
                     {% endfor %}
                 </div>
 
-                <div class="post__container post__container--horizontal">
-                    <div class="post__container post__container--horizontal post__container--margin-right">
-                        <img class="post__author--image" />
-                        <span class="post__author">{{ include.author }}</span>
-                    </div>
-                    <div class="post__container post__container--horizontal post__container--margin-right">
-                        <img class="post__date--image" />
-                        <span class="post__date">{{ include.postDate | date_to_string }}</span>
-                    </div>
-                </div>
+                {% include post_additional_info.html
+                    postAuthor = include.author
+                    postDate = include.postDate %}
             </div>
         </div>
     </a>
