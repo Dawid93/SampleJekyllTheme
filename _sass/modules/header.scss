@@ -1,6 +1,5 @@
 .banner {
     box-shadow: 0 8px 4px $shadow-color;
-    font-family: "Inter";
     text-shadow: 0px 0px 4px $shadow-color;
     height: 100%;
     width: 100%;
@@ -83,7 +82,7 @@
     }
 
     &__main {
-        max-width: $desktop;
+        max-width: $large-screen-container-width;
         grid-area: 1 / 1 / 2 / 3;
         max-height: 500px;
         position: relative;

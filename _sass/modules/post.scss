@@ -40,10 +40,15 @@
 
     &__container {
         display: flex;
+        margin: 0.25rem 0;
 
         &--vertical {
             justify-content: center;
             flex-direction: column;
+        }
+
+        &--vertical-center {
+            align-items: center;
         }
 
         &--horizontal {

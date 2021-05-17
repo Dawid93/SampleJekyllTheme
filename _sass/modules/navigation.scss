@@ -6,6 +6,7 @@
     top: 0;
     position: sticky;
     box-shadow: 0 4px 4px $shadow-color;
+    font-family: 'Roboto', sans-serif;
     grid-row-start: 1;
     grid-row-end: 2;
 
@@ -19,8 +20,7 @@
         align-items: center;
         flex-wrap: wrap;
 
-        @media screen and (max-width: $mobile),
-        screen and (max-width: $tablet) {
+        @media screen and (max-width: $small-screen-max-width) {
             justify-content: space-between;
         }
     }
@@ -34,8 +34,7 @@
             order: 1;
             padding-right: .5rem;
 
-            @media screen and (max-width: $mobile),
-            screen and (max-width: $tablet) {
+            @media screen and (max-width: $small-screen-max-width) {
                 width: 100%;
                 order: 2;
                 text-align: center;
@@ -75,8 +74,7 @@
         cursor: pointer;
         display: none;
 
-        @media screen and (max-width: $mobile),
-        screen and (max-width: $tablet) {
+        @media screen and (max-width: $small-screen-max-width) {
             order: 1;
             display: block;
 

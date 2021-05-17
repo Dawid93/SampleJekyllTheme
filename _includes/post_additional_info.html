@@ -2,11 +2,11 @@
 {% assign postDate = include.postDate %}
 
 <div class="post__container post__container--horizontal">
-    <div class="post__container post__container--margin-right">
+    <div class="post__container post__container--vertical-center post__container--margin-right">
         <img class="post__author--image" />
         <span class="post__author">{{ postAuthor }}</span>
     </div>
-    <div class="post__container post__container--margin-right">
+    <div class="post__container post__container--vertical-center post__container--margin-right">
         <img class="post__date--image" />
         <span class="post__date">{{ postDate | date_to_string }}</span>
     </div>

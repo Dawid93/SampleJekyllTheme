@@ -1,0 +1,41 @@
+.categories {
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 150px);
+        gap: 2rem;
+        justify-content: center;
+    }
+}
+
+.card {
+    width: 150px;
+    
+    &__top {
+        height: 200px; 
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 8px 4px $shadow-color;
+
+        &--background {
+            background-color: orange;
+        }
+    }
+
+    &__bottom {
+
+    }
+
+    &__image {
+        width: 75%;
+        content: url(../../assets/img/socials/social_bg.png);
+    }
+
+    &__title {
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 400;
+        text-shadow: 0px 0px 8px black;
+    }
+}

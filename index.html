@@ -5,81 +5,83 @@ pagination:
     enabled: true
 ---
 
-{% if paginator.page == 1 %}
-    <section class="container section">
-        <header class="header">
-            <!-- First/Main banner -->
-            {% if site.posts.size > 0 %}
-            {% assign post = site.posts[0] %}
-            {% assign image_path = post.image | relative_url %}
-            {% assign postUrl = post.url | relative_url %}
-            {% include banner.html
-            type='main'
-            image=image_path
-            title=post.title
-            postUrl=postUrl
-            author=post.author
-            categories=post.categories
-            postDate = post.date  %}
+<div class="content__flex-column">
+    {% if paginator.page == 1 %}
+        <section class="container section">
+            <header class="header">
+                <!-- First/Main banner -->
+                {% if site.posts.size > 0 %}
+                {% assign post = site.posts[0] %}
+                {% assign image_path = post.image | relative_url %}
+                {% assign postUrl = post.url | relative_url %}
+                {% include banner.html
+                type='main'
+                image=image_path
+                title=post.title
+                postUrl=postUrl
+                author=post.author
+                categories=post.categories
+                postDate = post.date  %}
+                {% endif %}
+                <!--Second banner--> 
+                {% if site.posts.size > 1 %}
+                {% assign post = site.posts[1] %}
+                {% assign image_path = post.image | relative_url %}
+                {% assign postUrl = post.url | relative_url %}
+                {% include banner.html
+                type='secondary'
+                image=image_path
+                title=post.title
+                postUrl=postUrl
+                author=post.author
+                categories=post.categories
+                postDate = post.date  %}
+                {% endif %}
+                <!--Third banner-->
+                {% if site.posts.size > 2 %}
+                {% assign post = site.posts[2] %}
+                {% assign image_path = post.image | relative_url %}
+                {% assign postUrl = post.url | relative_url %}
+                {% include banner.html
+                type='secondary'
+                image=image_path
+                title=post.title
+                postUrl=postUrl
+                author=post.author
+                categories=post.categories
+                postDate = post.date  %}
+                {% endif %}
+            </header>
+        </section>
+    {% endif %}
+
+    {% if site.posts.size > 3 %}
+        <section class="container section posts">
+            {% if paginator.page == 1 %}
+                <h1 class="section__title">Older posts:</h1>
+                {% assign startFromPost = 3 %}
+                {% assign show = paginator.per_page | minus: 3 %}
+            {% else %}
+                {% assign startFromPost = 0 %}
+                {% assign show = paginator.per_page %}
             {% endif %}
-            <!--Second banner--> 
-            {% if site.posts.size > 1 %}
-            {% assign post = site.posts[1] %}
-            {% assign image_path = post.image | relative_url %}
-            {% assign postUrl = post.url | relative_url %}
-            {% include banner.html
-            type='secondary'
-            image=image_path
-            title=post.title
-            postUrl=postUrl
-            author=post.author
-            categories=post.categories
-            postDate = post.date  %}
-            {% endif %}
-            <!--Third banner-->
-            {% if site.posts.size > 2 %}
-            {% assign post = site.posts[2] %}
-            {% assign image_path = post.image | relative_url %}
-            {% assign postUrl = post.url | relative_url %}
-            {% include banner.html
-            type='secondary'
-            image=image_path
-            title=post.title
-            postUrl=postUrl
-            author=post.author
-            categories=post.categories
-            postDate = post.date  %}
-            {% endif %}
-        </header>
+
+            {% for post in site.posts offset: startFromPost limit: show %}
+                {% assign image_path = post.image | relative_url %}
+                {% assign postUrl = post.url | relative_url %}
+                {% include post.html
+                image=image_path
+                author=post.author
+                title=post.title
+                postUrl=postUrl
+                brief=post.excerpt
+                categories=post.categories
+                postDate = post.date %}
+            {% endfor %}
+        </section>
+    {% endif %}
+
+    <section class="container">
+        {% include pagination.html %}
     </section>
-{% endif %}
-
-{% if site.posts.size > 3 %}
-    <section class="container section posts">
-        {% if paginator.page == 1 %}
-            <h1 class="section__title">Older posts:</h1>
-            {% assign startFromPost = 3 %}
-            {% assign show = paginator.per_page | minus: 3 %}
-        {% else %}
-            {% assign startFromPost = 0 %}
-            {% assign show = paginator.per_page %}
-        {% endif %}
-
-        {% for post in site.posts offset: startFromPost limit: show %}
-            {% assign image_path = post.image | relative_url %}
-            {% assign postUrl = post.url | relative_url %}
-            {% include post.html
-            image=image_path
-            author=post.author
-            title=post.title
-            postUrl=postUrl
-            brief=post.excerpt
-            categories=post.categories
-            postDate = post.date %}
-        {% endfor %}
-    </section>
-{% endif %}
-
-<section class="container">
-    {% include pagination.html %}
-</section>
+</div>

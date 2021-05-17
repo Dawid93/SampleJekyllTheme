@@ -32,6 +32,19 @@
             display: block;
             border-radius: 8px;
             box-shadow: 0 8px 4px $shadow-color;
+            width: 560px;
+            height: 315px;
+
+            @media screen and (max-width: $medium-screen-min-width) {
+                width: 400px;
+                height: 225px;
+            }
+
+            @media screen and (max-width:
+            $small-screen-max-width) {
+                width: 320px;
+                height: 180px;
+            }
         }
     }
 
