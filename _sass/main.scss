@@ -40,6 +40,10 @@ html {
       padding: 0 1rem;
       max-width: $medium-screen-container-width;
     }
+
+    @media screen and (max-width: $medium-screen-min-width) {
+      max-width: $small-screen-container-width;
+    }
   }
 
   .content {
